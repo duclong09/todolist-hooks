@@ -20,9 +20,6 @@ function Footer() {
   }
 
   const deleteTodo = () => {
-    const newTodos = todos.filter(todo => {
-      return todo.completed === false
-    })
     setTodos(newTodosCompleted())
     setCheckAll(false)
   }
