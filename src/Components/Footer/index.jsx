@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../Data";
 
 function Footer() {
   const [checkAll, setCheckAll] = useState(false)
   const [todos, setTodos] = useContext(DataContext)
+  const [check, setCheck] = useState('')
 
   const handleCheckAll = ()=>{
     const newTodos = [...todos]
@@ -23,6 +24,11 @@ function Footer() {
     setTodos(newTodosCompleted())
     setCheckAll(false)
   }
+
+  useEffect(()=>{
+    console.log('test-todo');
+
+  })
   return (
     <>
       {
@@ -33,6 +39,7 @@ function Footer() {
           onChange={handleCheckAll}
           checked={checkAll}
           />
+          <input></input>
           All
         </label>
         <p>You have {newTodosCompleted().length} to do</p>

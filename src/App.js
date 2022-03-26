@@ -16,6 +16,7 @@ function App() {
     const handleScroll = () => {
       setShowGotoTop(window.pageYOffset >= 150);
     };
+    
     window.addEventListener("scroll", handleScroll);
     //clern
     return () => {
